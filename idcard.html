@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID CARD</title>
+    <style>
+        .idcardbox{
+            width: 400px;
+            border-color: red;
+            border-style: dashed;
+        }
+        .head{
+            background-image: url(images.jpeg);
+            background-size: 700px 220px;
+        }
+        
+        
+        .logobox{
+            display: flex;
+            justify-content: center;
+        }
+        .logo{
+            width: 400px;
+            height: 120px;
+        }
+        .textbox{
+            text-align: right;
+            margin-right: 25px;
+            font-family: arial;
+            font-style: italic;
+            font-weight: 400;
+        }
+        .idimagebox{
+            display: flex;
+            justify-content: center;
+            
+        }
+        .idimage{
+            width: 170px;
+            height: auto;
+        }
+        .iddetailsbox{
+            text-align: center;
+            line-height: 0.5;
+            font-family: arial;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .barcodebox{
+            display: flex;
+            justify-content: center;
+        }
+        .barcodeimage{
+            width: 190px;
+            height: 100px;
+        }
+        .iddatabox{
+            display: flex;
+            font-size: 13px;
+            font-family: arial;
+            font-style: italic;
+            font-weight: 400;
+        }
+        .leftdatabox{
+            margin-left: 15px;
+            
+        }
+        .rightdatabox{
+            margin-left: 80px;
+        }
+        .signaturebox{
+            display: flex;
+            justify-content: right;
+        }
+        .signature{
+            width: 100px;
+            margin-right: 30px;
+            margin-bottom: 0px;
+        }
+        .signbox{
+            display: flex;
+            justify-content: right;
+        }
+        .sign{
+            margin-right: 45px;
+            margin-top: 3px;
+        }
+        .tail{
+            background-image: url(lowerredcurveimage.png);
+            background-size: 500px 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="idcardbox">
+        <div class="head">
+            <div class="logobox">
+                <img class="logo" src="sasilogopic.jpg" alt="no logo found">
+            </div>
+            <div class="textbox"><p>Values we live....</p></div>
+        </div>
+        <div class="body">
+            <div class="idimagebox">
+                <img class="idimage" src="WhatsApp Image 2024-10-14 at 18.39.22_345b1ed3.jpg" alt="no id image found">
+            </div>
+            <div class="iddetailsbox">
+                <p>D.Leela Vamsi Krishna</p>
+                <p>23K61A0546</p>
+                <p>B.Tech C.S.E</p>
+            </div>
+            <div class="barcodebox">
+                <img class="barcodeimage" src="barcodeimage.jpg" alt="no barcode found">
+            </div>
+        </div>
+        <div class="tail">
+        <div class="iddatabox">
+            <div class="leftdatabox">
+                <p>Father Name: D.Srinivas</p>
+                <p>Adhaar no: 4786 4555 1211</p>
+                <p>cell no: 9949471552</p>
+                <p>Validity: 2023 - 27</p>
+            </div>
+            <div class="rightdatabox">
+                <p>Blood Group: B +ve</p>
+                <p>Village: Darsiparru</p>
+            </div>
+        </div>
+        <div class="signaturebox">
+            <img class="signature" src="signature.jpg" alt="no signature image found">
+            
+        </div>
+        <div class="signbox"><p class="sign">signature</p></div>
+        </div>
+    </div>
+</body>
+</html>
