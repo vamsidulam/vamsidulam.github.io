@@ -34,6 +34,8 @@
             font-family: arial;
         }
         .names{
+            padding-left: 15px;
+            padding-right: 15px;
             transition: text-decoration 0.15s,font-weight 0.15s;
         }
         .names:hover{
@@ -81,7 +83,7 @@
             background-color: black;
             border-radius: 15px;
             padding: 35px;
-            height: 330px;
+            height: 350px;
         }
         .web{
             font-size: 50px;
@@ -143,11 +145,16 @@
             margin-top: 30px;
         }
         .password,.email{
-            border: none;
+            outline: none;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-top-width: 0px;
+            border-bottom-width: 2px;
             color: white;
             font-size: 15px;
             margin-bottom: 18px;
-            background-color: black;  
+            background-color: black; 
+            margin-top: 15px;
         }
         .login{
             background-color: orange;
