@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>websitepage</title>
+    <style>
+        body{
+          background-image: url(tree-736881_1280.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+      }
+        .topsection{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            align-items: center;
+            height: 60px;
+        }
+        .leftpart{
+            margin-left: 30px;
+            font-size: 28px;
+            color: rgb(194, 131, 15);
+            font-weight: bold;
+            font-family: arial;
+        }
+        .middlepart{
+            display: flex;
+            width: 700px;
+            justify-content: space-between;
+            color: rgb(255, 255, 255);
+            font-family: arial;
+        }
+        .rightpart{
+            margin-right: 35px;
+            display: flex;
+        }
+        .searchbar{
+            border: none;
+            border-color: white;
+            opacity: 0.4;
+        }
+        .rightpart button{
+            background-color: orange;
+            border: none;
+            color: white;
+            padding-left: 13px;
+            padding-right: 13px;
+            height: 34px;
+            cursor: pointer;
+        }
+        .bottomsection{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            position: absolute;
+            bottom: 0px;
+            top: 60px;
+            right: 0px;
+            left: 0px;
+        }
+        .datapart{
+            flex: 1;
+            color: white;
+        }
+        .formsection{
+            width: 300px;
+            background-color: black;
+            border-radius: 15px;
+            padding: 35px;
+            height: 330px;
+        }
+        .web{
+            font-size: 50px;
+            font-family: arial;
+            font-weight: bold;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .development{
+            font-size: 70px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            width: 200px;
+            font-family: arial;
+            color: orange;
+            font-weight: bold;
+        }
+        .course{
+            font-size: 50px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: bold;
+            font-family: arial;
+        }
+        .webdesign{
+            margin-top: 10px;
+            margin-bottom: 0px;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+
+        }
+        .joinbutton{
+            background-color: orange;
+            color: white;
+            border:none;
+            padding-left: 28px;
+            padding-right: 28px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            border-radius: 15px;
+        }
+        .formheading{
+            background-color: rgb(255, 255, 255);
+            color: orange;
+            height:45px;
+            border-radius: 10px;
+            display: flex;
+            font-weight: bold;
+            font-size: 22px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .inputsection{
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        .password,.email{
+            border: none;
+            color: white;
+            font-size: 15px;
+            margin-bottom: 18px;
+            background-color: black;  
+        }
+        .login{
+            background-color: orange;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 5px;
+            border-radius: 15px;
+            height: 40px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .descriptionsection{
+            line-height: 8px;
+            text-align: center;
+            color: white;
+        }
+        .imagesection{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .icons{
+            width: 30px;
+            object-fit: cover;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="topsection">
+            <div class="leftpart">
+                PraRoz@
+            </div>
+            <div class="middlepart">
+                <p>HOME</p>
+                <p>ABOUT</p>
+                <p>SERVICE</p>
+                <p>DESIGN</p>
+                <p>CONTACT</p>
+            </div>
+            <div class="rightpart">
+                <input class="searchbar" type="text" placeholder="Type to Search">
+                <button>Search</button>
+            </div>
+        </div>
+        <div class="bottomsection">
+            <div class="datapart">
+                <p class="web">Web Design &</p>
+                <p class="development">Development</p>
+                <p class="course">Course</p>
+                <p class="webdesign">Web Design is a specilisation of the design stream.They also use HTML.,</p>
+                <p class="webdesign">CSS,WYSIWYG editing software,markup validators etc.,</p>
+                <p class="webdesign">to create design elements</p>
+                <button class="joinbutton">JOIN US</button>
+            </div>
+            <div class="formsection">
+                <div class="formheading">
+                    <p>Login Here</p>
+                </div>
+                <div class="inputsection">
+                    <input class="email" placeholder="Enter Email Here" type="email">
+                    <input class="password" placeholder="Enter Password Here" type="password">
+                    <button class="login">Login</button>
+                </div>
+                <div class="descriptionsection">
+                    <p>Don't have an account?</p>
+                    <p>Sign up here</p>
+                    <p>Log in with</p>
+                </div>
+                <div class="imagesection">
+                    <img class="icons" src="websitepagepics/social-1834013_1280.png">
+                    <img style="margin-left: 20px;" class="icons" src="websitepagepics/google-1632434_1280.png">
+                    <img style="margin-left: 20px;" class="icons" src="websitepagepics//instagram-2332711_1280.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
