@@ -33,6 +33,14 @@
             color: rgb(255, 255, 255);
             font-family: arial;
         }
+        .names{
+            transition: text-decoration 0.15s,font-weight 0.15s;
+        }
+        .names:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: bolder;
+        }
         .rightpart{
             margin-right: 35px;
             display: flex;
@@ -41,6 +49,7 @@
             border: none;
             border-color: white;
             opacity: 0.4;
+            border-radius: 10px 0px 0px 10px;
         }
         .rightpart button{
             background-color: orange;
@@ -50,6 +59,7 @@
             padding-right: 13px;
             height: 34px;
             cursor: pointer;
+             border-radius: 0px 10px 10px 0px;
         }
         .bottomsection{
             display: flex;
@@ -175,11 +185,11 @@
                 PraRoz@
             </div>
             <div class="middlepart">
-                <p>HOME</p>
-                <p>ABOUT</p>
-                <p>SERVICE</p>
-                <p>DESIGN</p>
-                <p>CONTACT</p>
+                <p class="names">HOME</p>
+                <p class="names">ABOUT</p>
+                <p class="names">SERVICE</p>
+                <p class="names">DESIGN</p>
+                <p class="names">CONTACT</p>
             </div>
             <div class="rightpart">
                 <input class="searchbar" type="text" placeholder="Type to Search">
