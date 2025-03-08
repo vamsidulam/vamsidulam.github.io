@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100%;
+            
+        }
+        .gmailoutput{
+            display: flex;
+
+        }
+        .left{
+            width: 240px;
+            
+        }
+        .right{
+            flex: 1;
+            
+        }
+        .left1,.left2-box,.leftbars,.bars,.left4{
+            display: flex;
+            align-items: center;
+            
+        }
+        .left1{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            
+        }
+        .left2{
+            padding-left: 10px;
+        }
+        .left2-box{
+            background-color: rgb(209, 237, 237);
+            width: 130px;
+            height: 53px;
+            border-radius: 15px;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            transition: background-color: 0.15s,width 0.15s, height 0.15s;
+        }
+        .left2-box:hover{
+            width: 140px;
+            height: 55px;
+            background-color: rgb(192, 232, 232);
+        }
+        .left3{
+            line-height: 0px;
+            padding-top: 10px;
+        }
+        .left4{
+            padding-top: -5px;
+            
+        }
+        .menuicon{
+            transition: background-color 0.15s,border-radius 0.15s,padding 0.15s;
+        }
+        .menuicon:hover{
+            background-color: aqua;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .menuicon,.pencilicon{
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+        }
+        .gmaillogoicon{
+            width: 30px;
+            height: 20px;
+            object-fit: cover;
+            padding-left: 10px;
+            
+        }
+        .gmailnameicon{
+            width: 58px;
+            height: 20px;
+            
+            object-fit: cover;
+            padding-left: 6px;
+        }
+        
+        .leftbars:hover{
+            background-color: aliceblue;
+            border: 1px solid rgb(242, 202, 202);
+        }
+        .leftbars,.left4{
+            font-size: 15px;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 20px;
+        }
+        .icons{
+            width: 18px;
+            height: 18px;
+            object-fit: cover;
+            padding-left: 30px;
+        }
+        .nameoficon{
+            padding-left: 15px;
+            font-size: 18px;
+            pointer-events: none;
+        }
+        .left4 p{
+            padding-left: 30px;
+            font-size: 20px;
+        }
+        .leftbars{
+            position:relative;
+        }
+        .iconname{
+            position: absolute;
+            right: -90px;
+            opacity: 0;
+            background-color: aqua;
+            padding: 15px;
+            border-radius: 10px;
+            transition: opacity 0.15s;
+            pointer-events: none;
+        }
+        .leftbars:hover .iconname{
+            opacity: 1;
+        }
+        .right{
+            padding-top: 20px;
+        }
+        .topsection{
+            display: flex;
+            padding-left: 20px;
+            height: 70px;
+        }
+        .searchbarsection{
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        .toprightsection{
+            width: 230px;
+            display: flex;
+            padding-right: 20px;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 25px;
+            
+        }
+        .searchbarbox{
+            position: relative;
+            display: flex;
+            width: 100%;
+            max-width: 700px;
+            
+        }
+        .searchname{
+            position: absolute;
+            bottom: -18px;
+            left: 5px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s;
+        }
+        
+        .lensname{
+            position: absolute;
+            right: -40px;
+            bottom: -18px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s;
+        }
+        .box:hover .searchname{
+            opacity: 1;
+        }
+        .box:hover .lensname{
+            opacity: 1;
+        }
+        .searchoption{
+            position: absolute;
+            top: 13px;
+            left: 10px;
+        }
+        
+        
+        .lensoption{
+            position: absolute;
+            top: 13px;
+            right: 10px;
+        }
+        .searchbar{
+            flex: 1;
+            width: 100%;
+            max-width: 700px;
+            padding-left: 50px;
+            padding-bottom: 13px;
+            padding-top: 13px;
+            padding-right: 13px;
+            height: 20px;
+            border-radius: 20px;
+            border: 1px solid rgb(223, 231, 238);
+            outline: none;
+            background-color:rgb(230, 243, 243);
+            
+        }
+        
+        .searchbaricon,.searchbaricons{
+            width: 23px;
+            height: 23px;
+            object-fit: cover;
+            border-radius: 50px;
+            transition: background-color 0.15s,border-radius 0.15s,padding 0.15s;
+        }
+        .searchbariconsbox{
+            position: relative;
+            align-items: center;
+            
+            display: flex;
+            flex-direction: column;
+        }
+        .desc{
+            position: absolute;
+            bottom: -30px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s;
+        }
+        .searchbariconsbox:hover .desc{
+            opacity: 1;
+        }
+        .geminiicon:hover{
+            background-color: aqua;
+            border-radius: 50px;
+            padding: 5px;
+        }
+        .geminiicon{
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 50px;
+            transition: background-color 0.15s,border-radius 0.15s,padding 0.15s;
+        }
+        .dp{
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 50px;
+        }
+        .bottomsection{
+            
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .reloadsection img{
+            width: 15px;
+            height: 15px;
+            object-fit: cover;
+            padding-left: 30px;
+            
+        }
+        .reloadsection .setting{
+            padding-left: 30px;
+        }
+        .reloadsection p{
+            padding-left: 5px;
+        }
+        .reloadsection{
+            display: flex;
+            align-items: center; 
+            
+            height: 35px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .noofmsgssection{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .msgs{
+            display: flex;
+            justify-content: space-between;
+            border-top: 0.1px solid rgb(205, 213, 219);
+            height: 35px;
+            transition: background-color 0.15s,box-shadow 0.15s;
+        }
+        .msgs:hover{
+            background-color: aliceblue;
+            box-shadow: black 1px 1px;
+        }
+        .leftmsg,.middlemsg,.rightmsg{
+            display: flex;
+            align-items: center;
+        }
+        .leftmsg .logos{
+            width: 15px;
+            height: 15px;
+            padding-left: 8px;
+        }
+        .leftmsg p{
+            padding-left: 10px;
+        }
+        .leftmsg{
+            width: 260px;
+            
+        }
+        .middlemsg{
+            flex: 1;
+        }
+        .contentbox{
+            
+            flex: 1;
+        }
+       
+        .mailboxsection{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            height: 100%;
+            min-height: 50px;
+            max-height: 80vh;
+            
+        }
+        .msgssection{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="gmailoutput">
+        <div class="left">
+            <div class="left1">
+                <img class="menuicon" title="menu" src="gmailpics/menu icon.png">
+                <div class="gmailbatch" title="gmail">
+                    <img class="gmaillogoicon"  src="gmailpics/gmail logo.png">
+                    <img class="gmailnameicon" src="gmailpics/gmail name.png">
+                </div>
+            </div>
+            <div class="left2">
+                <div class="left2-box">
+                    <img class="pencilicon" src="gmailpics/pencilblack.png">
+                    <p class="nameoficon">Compose</p>
+                </div>
+                
+            </div>
+            <div class="left3">
+                <div class="leftbars" style="background-color: rgb(235, 222, 205); border-radius: 10px;">
+                    <div class="bars" >
+                        <img class="icons" src="gmailpics/inbox.png">
+                        <p class="nameoficon">Inbox</p>
+                        <div class="iconname">Inbox</div>
+                    </div>
+                    
+                    <div><p>7,832</p></div>
+                </div>
+                <div class="leftbars">
+                    <div class="bars">
+                        <img class="icons" src="gmailpics/star.png">
+                        <p class="nameoficon">Starred</p>
+                        <div class="iconname">Starred</div>
+                    </div>
+                    
+                </div>
+                <div class="leftbars">
+                    <div class="bars">
+                        <img class="icons" src="gmailpics/clock.png">
+                        <p class="nameoficon">Snoozed</p>
+                        <div class="iconname">Snoozed</div>
+                    </div>
+                    
+                </div>
+                <div class="leftbars">
+                    <div class="bars">
+                        <img class="icons" src="gmailpics/right arrow.png">
+                        <p class="nameoficon">Sent</p>
+                        <div class="iconname">Sent</div>
+                    </div>
+                    
+                </div>
+                <div class="leftbars">
+                    <div class="bars">
+                        <img class="icons" src="gmailpics/drafts.png">
+                        <p class="nameoficon">Drafts</p>
+                        <div class="iconname">Drafts</div>
+                    </div>
+                    
+                    <div><p>13</p></div>
+                </div>
+                <div class="leftbars">
+                    <div class="bars">
+                        <img class="icons" src="gmailpics/down arrow.png">
+                        <p class="nameoficon">More</p>
+                        <div class="iconname">More</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="left4">
+                <p >Labels</p>
+                <img class="icons" src="gmailpics/plus.png">
+            </div>
+        </div>
+        <div class="right">
+            <div class="topsection">
+                <div class="searchbarsection">
+                    <div class="searchbarbox">
+                        <input class="searchbar" type="email" placeholder="Search mail">
+                        <div class="box">
+                            <div class="searchoption"><img class="searchbaricon" src="gmailpics/search.png"></div>
+                            <div class="searchname">Search</div>
+                        </div>
+                            
+                       <div class="box">
+                        <div class="lensoption"><img class="searchbaricon" src="gmailpics/googlelnes.png"></div>
+                        <div class="lensname">Show more options</div>
+                       </div>
+                        
+                        
+                       
+                        
+                    </div>
+                    
+                </div>
+                <div class="toprightsection">
+                    <div class="searchbariconsbox">
+                        <img class="searchbaricons" src="gmailpics/support.png">
+                        <div class="desc">support</div>
+                        
+                    </div>
+                    <div class="searchbariconsbox">
+                        <img class="searchbaricons" src="gmailpics/settings.png">
+                        <div class="desc">settings</div>
+                    </div>
+                    <div class="searchbariconsbox">
+                        <img class="geminiicon" src="gmailpics/gemini.png">
+                        <div class="desc">Gemini</div>
+                    </div>
+                    <div class="searchbariconsbox">
+                        <img class="dp" src="gmailpics/spiderman.jpg">
+                        <div class="desc">Your profile</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="bottomsection">
+                <div class="reloadsection">
+                    <input type="checkbox">
+                    <p class="downarrow">&dArr;</p>
+                    <img src="gmailpics/reload.png">
+                    <p class="setting">&vellip;</p>
+                </div>
+                <div class="mailboxsection">
+                    <div class="contentbox">
+                    <div class="noofmsgssection">
+                        <p>&uarr; Unread</p>
+                        <p>1-25 of 7,835 &vellip;</p>
+
+                    </div>
+                    <div class="msgssection">
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>onlinecourses</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Come join us for this new webinar Mentiby Cohort 2.0 Announcement! - Hello Vamsi Dulam, we have a brand new webinar Mentiby</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                        <div class="msgs">
+                            <div class="leftmsg">
+                                <input type="checkbox">
+                                <img class="logos" src="gmailpics/star.png">
+                                <img class="logos" src="gmailpics/right arrow.png">
+                                <p>Synaptix Jobs Consu.</p>
+                            </div>
+                            <div  class="middlemsg">
+                                <p>Urgent Hiring for Accounts Associate at pravesha Industries Private Limited-Do Not forward this mail,it contains link...</p>
+                                
+                            </div>
+                            <div class="rightmsg">
+                                <p>11:49AM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
