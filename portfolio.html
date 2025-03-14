@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <style>
+        body{
+            background-image: url(jonatan-pie-h8nxGssjQXs-unsplash\ \(1\).jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        .top{
+            display: flex;
+            flex-direction:column;
+        }
+        .topsection{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 100px;
+        }
+        .topleft{
+            font-size: 30px;
+            font-style: italic;
+            font-weight: bold;
+            padding-left: 50px;
+            transition: 1s;
+        }
+        .topleft:hover{
+            text-decoration: underline;
+            font-size: 34px;
+        }
+        .topright{
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            font-size: 25px;
+            transition: 1s;
+        }
+        .topright p:hover{
+            text-decoration: underline;
+        }
+        .middlesection{
+            height: 75vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 150px;
+            
+        }
+        .content{
+            line-height: 55px;
+            flex: 1;
+        }
+        .developername{
+            font-size: 45px;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .developer{
+            font-size: 30px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 600;
+            color: rgb(149, 97, 23);
+        }
+        .personal,.skills,.certifications{
+            font-size: 23px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .box1{
+            position: relative;
+            width: 200px;
+        }
+        .personalbox{
+            line-height: 30px;
+            position: absolute;
+            right: -190px;
+            top: -8px;
+            background-color: rgba(5, 5, 3, 0.3);
+            border-radius: 10px;
+            padding: 8px;
+            opacity: 0;
+            pointer-events: none;
+            transition: 1s;
+        }
+        .box1:hover .personalbox{
+            opacity: 1;
+        }
+        .personalbox p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .photos{
+            display: flex;
+            padding-top: 0px;
+            padding-left: 150px;
+            width: 160px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .insta img{
+            margin-left: -15px;
+            
+        }
+        .icons{
+            
+            object-fit: cover;
+            cursor: pointer;
+            
+        }
+        .dpbox{
+            display: flex;
+            padding-right: 100px;
+            
+        }
+        .boxdp{
+            flex: 1;
+        }
+        .dp{
+            width: 350px;
+            height: 350px;
+            border-radius: 500px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="top">
+            <div class="topsection">
+                <div class="topleft">Vamsi.D</div>
+                <div class="topright">
+                    <p>Home</p>
+                    <p>Contact</p>
+                    <p>Address</p>
+                    <p>Services</p>
+                </div>
+            </div>
+            <div class="middlesection">
+                <div class="content">
+                    <p class="developername">Hi, I'm Vamsi Dulam</p>
+                    <p class="developer">Frontend Developer</p>
+                    <div class="content-box-1">
+                        <div class="box1">
+                            <p class="personal">Personal information</p>
+                            <div class="personalbox">
+                                <p>vamsi.dulam@sasi.ac.in</p>
+                                <p>91+ 994947****</p>
+                            </div>
+                        </div>
+                        <div class="box1">
+                            <p class="skills">Skills</p>
+                            <div class="personalbox">
+                                <p>programming languages: C,Java,Python</p>
+                                <p>web development: HTML,CSS</p>
+                            </div>
+                        </div>
+                        <div class="box1">
+                            <p class="certifications">Certifications</p>
+                            <div class="personalbox">
+                                <p>NPTEL PYTHON certificate</p>
+                                <p>inkem levu</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="dpbox">
+                    <div class="boxdp">
+                        <img class="dp" src="portfoliopics/vamsi.jpg">
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="photos">
+            
+            <a target="_blank" href="https://github.com/vamsidulam/vamsidulam.github.io"><img style="
+            width: 70px;
+            height: 70px;
+                " class="icons" src="portfoliopics/github.png"></a>
+            <a class="insta" target="_blank" href="https://www.instagram.com/_l_k_11_/">
+                <img class="icons" style="width: 40px;
+            height: 40px; " src="portfoliopics/instagram.png"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/vamsi-dulam-37392928b/"><img class="icons" style="width: 30px;
+            height: 30px; " src="portfoliopics/linkedin.png"></a>
+        </div>
+    </div>
+</body>
+</html>
