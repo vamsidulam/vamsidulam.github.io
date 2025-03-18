@@ -22,6 +22,8 @@
             justify-content: space-between;
             align-items: center;
             padding-right: 100px;
+            
+            height: 80px;
         }
         .topleft{
             font-size: 30px;
@@ -41,8 +43,62 @@
             font-size: 25px;
             transition: 1s;
         }
+        .topright p{
+            transition: 1s;
+
+        }
         .topright p:hover{
             text-decoration: underline;
+            font-size: 28px;
+        }
+        .contactbox,.addressbox,.helpbox{
+            position: relative;
+            
+        }
+        .helptxt{
+            position: absolute;
+            font-size: 18px;
+            background-color: rgba(11, 10, 10,0.3);
+            color: white;
+            border-radius: 15px;
+            padding: 5px;
+            line-height: 12px;
+            left: -70px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 1s;
+        }
+        .addresstxt{
+            position: absolute;
+            font-size: 18px;
+            background-color: rgba(11, 10, 10,0.3);
+            color: white;
+            border-radius: 15px;
+            padding: 5px;
+            line-height: 12px;
+            left: -60px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 1s;
+        }
+        .contacttxt{
+            position: absolute;
+            font-size: 18px;
+            background-color: rgba(11, 10, 10,0.3);
+            color: white;
+            border-radius: 15px;
+            padding: 5px;
+            line-height: 12px;
+            left: -80px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 1s;
+        }
+        .contactbox:hover .contacttxt,.addressbox:hover .addresstxt,.helpbox:hover .helptxt{
+            opacity: 1;
         }
         .middlesection{
             height: 75vh;
@@ -62,6 +118,13 @@
             font-weight: bold;
             margin-top: 0px;
             margin-bottom: 0px;
+            transition: font-size 1s;
+            display: inline-block;
+            
+            
+        }
+        .developername:hover{
+            font-size: 55px;
         }
         .developer{
             font-size: 30px;
@@ -82,9 +145,10 @@
         .personalbox{
             line-height: 30px;
             position: absolute;
-            right: -190px;
+            right: -220px;
             top: -8px;
-            background-color: rgba(5, 5, 3, 0.3);
+            font-size: 18px;
+            background-color: rgba(5, 5, 3, 0.6);
             border-radius: 10px;
             padding: 8px;
             opacity: 0;
@@ -101,17 +165,29 @@
         .photos{
             display: flex;
             padding-top: 0px;
-            padding-left: 150px;
+            padding-left: 135px;
             width: 160px;
             justify-content: space-between;
             align-items: center;
+        }
+        .desc{
+            padding-left: 150px;
+            font-size: 20px;
+        }
+        .desc p{
+            transition: text-decoration 1s;
+            margin-top: -40px;
+             margin-bottom: 0px;
+        }
+        .desc p:hover{
+            text-decoration: underline;
         }
         .insta img{
             margin-left: -15px;
             
         }
         .icons{
-            
+            pointer-events: none;
             object-fit: cover;
             cursor: pointer;
             
@@ -129,6 +205,60 @@
             height: 350px;
             border-radius: 500px;
             object-fit: cover;
+            transition: 1s;
+            animation-name: photo;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes photo {
+            0%{
+                width: 350px;
+            height: 350px;
+            border-radius: 500px;
+            object-fit: cover;
+            }
+            50%{
+                width: 400px;
+            height: 400px;
+            border-radius: 500px;
+            object-fit: cover;
+            }
+            100%{
+                width: 350px;
+            height: 350px;
+            border-radius: 500px;
+            object-fit: cover;
+            }
+        }
+        
+        .gitbox,.instabox,.linkedinbox{
+            position: relative;
+        }
+        .gittxt{
+            position: absolute;
+            left: 10px;
+            top: 60px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s;
+        }
+        .instatxt{
+            position: absolute;
+            left: -30px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s;
+        }
+        .linkedintxt{
+            position: absolute;
+            left: -10px;
+            top: 40px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 1s;
+        }
+        .gitbox:hover .gittxt,.instabox:hover .instatxt,.linkedinbox:hover .linkedintxt{
+            opacity: 1;
         }
     </style>
 </head>
@@ -138,10 +268,36 @@
             <div class="topsection">
                 <div class="topleft">Vamsi.D</div>
                 <div class="topright">
-                    <p>Home</p>
-                    <p>Contact</p>
-                    <p>Address</p>
-                    <p>Services</p>
+                    <div class="contactbox">
+                        <p>Home</p>
+                        <div class="contacttxt">
+                            <p>The Home section contains all my details</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contactbox">
+                        <p>Contact</p>
+                        <div class="contacttxt">
+                            <p>ph no: 9949471***</p>
+                            <p>Email:vamsidulam11@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="addressbox">
+                        <p>Address</p>
+                        <div class="addresstxt">
+                            <p>Darsiparru,ramayalaym street</p>
+                            <p>pentapadu mandal,TPG</p>
+                            <p>W.G Dist,AP,534166</p>
+                        </div>
+                    </div>
+                    <div class="helpbox">
+                        <p>Help</p>
+                        <div class="helptxt">
+                            <p>For any queries regarding</p>
+                            <p>my profile text me</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
             <div class="middlesection">
@@ -153,7 +309,7 @@
                             <p class="personal">Personal information</p>
                             <div class="personalbox">
                                 <p>vamsi.dulam@sasi.ac.in</p>
-                                <p>91+ 994947****</p>
+                                <p>+91 994947****</p>
                             </div>
                         </div>
                         <div class="box1">
@@ -167,7 +323,7 @@
                             <p class="certifications">Certifications</p>
                             <div class="personalbox">
                                 <p>NPTEL PYTHON certificate</p>
-                                <p>inkem levu</p>
+                                <p>Inkem levu</p>
                             </div>
                         </div>
                         
@@ -182,18 +338,30 @@
                 
             </div>
         </div>
-        
+        <div class="desc">
+            <p>Check Out my Social Media: </p>
+        </div>
         <div class="photos">
-            
-            <a target="_blank" href="https://github.com/vamsidulam/vamsidulam.github.io"><img style="
-            width: 70px;
-            height: 70px;
-                " class="icons" src="github.png"></a>
+            <div class="gitbox">
+                <a target="_blank" href="https://github.com/vamsidulam/vamsidulam.github.io">
+                    <img title="github" style="
+                    width: 70px;
+                    height: 70px;
+                        " class="icons" src="github.png"></a>
+                        <div class="gittxt">Github</div>
+            </div>
+           <div class="instabox">
             <a class="insta" target="_blank" href="https://www.instagram.com/_l_k_11_/">
-                <img class="icons" style="width: 40px;
+                <img title="instagram" class="icons" style="width: 40px;
             height: 40px; " src="instagram.png"></a>
-            <a target="_blank" href="https://www.linkedin.com/in/vamsi-dulam-37392928b/"><img class="icons" style="width: 30px;
+            <div class="instatxt">Instagram</div>
+           </div>
+            <div class="linkedinbox">
+                <a target="_blank" href="https://www.linkedin.com/in/vamsi-dulam-37392928b/"><img title="linkedin" class="icons" style="width: 30px;
             height: 30px; " src="linkedin.png"></a>
+            <div class="linkedintxt">Linkedin</div>
+            </div>
+            
         </div>
     </div>
 </body>
