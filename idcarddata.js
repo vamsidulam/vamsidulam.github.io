@@ -1,6 +1,6 @@
 const obj=[
     {
-        photo: 'idcardpics/AA.jpg',
+        photo: 'AA.jpg',
         name:'D.Leela Vamsi Krishna',
         regno:'23K61A0546',
         father:'srinivas',
@@ -9,7 +9,7 @@ const obj=[
         phone: 9949471552
     },
     {
-        photo: 'idcardpics/maheshbob-1.jpg',
+        photo: 'maheshbob-1.jpg',
         name:'P.Madhav Kumar',
         regno:'23K61A05E3',
         father:'srinivas',
@@ -18,7 +18,7 @@ const obj=[
         phone: 8074482243
     },
     {
-        photo: 'idcardpics/ramcharan.jpeg',
+        photo: 'ramcharan.jpeg',
         name:'R.VaraPrasad',
         regno:'23K61A05F8',
         father:'srinivas',
@@ -27,7 +27,7 @@ const obj=[
         phone: 7330651193
     },
     {
-        photo: 'idcardpics/prabhas.jpeg',
+        photo: 'prabhas.jpeg',
         name:'M.Chandu',
         regno:'23K61A0501',
         father:'srinivas',
@@ -36,7 +36,7 @@ const obj=[
         phone: 9949471552
     },
     {
-        photo: 'idcardpics/anime.jpeg',
+        photo: 'anime.jpeg',
         name:'E.Mani Varma',
         regno:'23K61A0548',
         father:'srinivas',
@@ -45,7 +45,7 @@ const obj=[
         phone: 6281411139
     },
     {
-        photo: 'idcardpics/ntr-2.jpg',
+        photo: 'ntr-2.jpg',
         name:'E.Keethi Varun',
         regno:'23K61A0547',
         father:'srinivas',
@@ -54,7 +54,7 @@ const obj=[
         phone: 6303858090
     },
     {
-        photo: 'idcardpics/maheshbob-2.jpeg',
+        photo: 'maheshbob-2.jpeg',
         name:'G.Aditya',
         regno:'23K61A0566',
         father:'srinivas',
@@ -63,7 +63,7 @@ const obj=[
         phone: 9391356544
     },
     {
-        photo: 'idcardpics/maheshbob-2.jpeg',
+        photo: 'maheshbob-2.jpeg',
         name:'B.Yaswanth',
         regno:'24K61A0502',
         father:'srinivas',
@@ -72,7 +72,7 @@ const obj=[
         phone: 9652958129
     },
     {
-        photo: 'idcardpics/ntr.jpg',
+        photo: 'ntr.jpg',
         name:'G.Tarak',
         regno:'23K61A0554',
         father:'srinivas',
@@ -81,7 +81,7 @@ const obj=[
         phone: 7989585835
     },
     {
-        photo: 'idcardpics/aa-1.jpg',
+        photo: 'aa-1.jpg',
         name:'A.Rohith',
         regno:'23K61A0507',
         father:'srinivas',
@@ -90,7 +90,7 @@ const obj=[
         phone: 7680081182
     },
     {
-        photo: 'idcardpics/jhonysins.jpeg',
+        photo: 'jhonysins.jpeg',
         name:'B.Karthikeya',
         regno:'24K61A0504',
         father:'srinivas',
