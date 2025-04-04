@@ -1,0 +1,120 @@
+.idcardbox{
+    width: 400px;
+    border-color: red;
+    border-style: dashed;
+}
+
+.logobox{
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    width: 400px;
+    height: 120px;
+}
+.textbox{
+    text-align: right;
+    margin-right: 25px;
+    font-family: arial;
+    font-style: italic;
+    font-weight: 400;
+}
+.idimagebox{
+    display: flex;
+    justify-content: center;
+    
+}
+.idimage{
+    width: 170px;
+    height: auto;
+}
+.iddetailsbox{
+    text-align: center;
+    line-height: 0.5;
+    font-family: arial;
+    font-weight: 400;
+    font-style: italic;
+}
+.barcodebox{
+    display: flex;
+    justify-content: center;
+}
+.barcodeimage{
+    width: 190px;
+    height: 100px;
+}
+.iddatabox{
+    display: flex;
+    font-size: 13px;
+    font-family: arial;
+    font-style: italic;
+    font-weight: 400;
+}
+.leftdatabox{
+    margin-left: 15px;
+    
+}
+.rightdatabox{
+    margin-left: 80px;
+}
+.signaturebox{
+    display: flex;
+    justify-content: right;
+}
+.signature{
+    width: 100px;
+    margin-right: 30px;
+    margin-bottom: 0px;
+}
+.signbox{
+    display: flex;
+    justify-content: right;
+}
+.sign{
+    margin-right: 45px;
+    margin-top: 3px;
+}
+.tail{
+    background-image: url(lowerredcurveimage.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pagebox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-section{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    height: 100px;
+    align-items: center;
+}
+.input-box{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px;
+    margin-right: 20px;
+    outline: none;
+    border-width: 0px 0px 1px 0px;
+    border-radius: 0px 50px 50px 50px;
+    color: gray;
+    text-align: center;
+}
+.search-btn{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
