@@ -40,8 +40,8 @@ let pic='';
             });
             if(value===0)
             {
-                document.querySelector('.js-idcard-box').innerHTML='';
-                alert('no id card found');
+                document.querySelector('.js-idcard-box').innerHTML='Nek Id Card ledhu dengaii!!';
+                
             }
         }
         function generateidcard(){
