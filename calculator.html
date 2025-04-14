@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+      align-items: center;
+      background-color: black;
+    }
+    .calculatorbox{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .rightsection{
+      display: flex;
+      flex-direction: column;
+    }
+    .resultbox{
+      height: 50px;
+      font-size: 30px;
+      color: white;
+      font-weight: bold;
+    }
+    button{
+      width: 50px;
+      height: 40px;
+      margin: 5px;
+      background-color: rgb(11, 201, 11);
+      border: none;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="resultbox">
+    <p class="resulttext"></p>
+  </div>
+  <div class="calculatorbox">
+    <div class="leftsection">
+      
+      <div>
+        <button onclick="calculate(1)">1</button>
+        <button onclick="calculate(2)">2</button>
+        <button onclick="calculate(3)">3</button>
+      </div>
+      <div>
+        <button onclick="calculate(4)">4</button>
+        <button onclick="calculate(5)">5</button>
+        <button onclick="calculate(6)">6</button>
+      </div>
+      <div>
+        <button onclick="calculate(7)">7</button>
+        <button onclick="calculate(8)">8</button>
+        <button onclick="calculate(9)">9</button>
+      </div>
+      <div>
+        <button onclick="calculate('.')">.</button>
+        <button onclick="calculate(0)">0</button>
+        <button onclick="calculate('=')">=</button>
+      </div>
+    </div>
+    <div class="rightsection">
+      <button onclick="calculate('+')">+</button>
+      <button onclick="calculate('-')">-</button>
+      <button onclick="calculate('*')">*</button>
+      <button onclick="calculate('/')">/</button>
+    </div>
+  </div>
+  
+
+  
+  
+  
+  
+  
+  <button onclick="clearall()">clear</button>
+  <script>
+    let result=localStorage.getItem('result')||'';
+    function clearall()
+    {
+      result='';
+      showresult(0);
+    }
+    function calculate(num)
+    {
+      if(num==='='){
+        // result=eval(result);
+        
+        result=Function('"use strict"; return (' +result+ ')')();
+        showresult(result);
+        localStorage.setItem('result',result);
+      }
+      else{
+        result+=num;
+        showresult(result);
+      }
+      
+      
+      localStorage.setItem('result',result);
+    }
+    function showresult(result){
+      document.querySelector('.resulttext').innerHTML=result;
+    }
+  </script>
+</body>
+</html>
