@@ -1,0 +1,548 @@
+html{
+    scroll-behavior: smooth;
+    background-color: black;
+    color: white;
+}
+body{
+    height: 100vh;
+    background-image: url(portfoliopics/background-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homesection{
+    color: rgb(255, 255, 255);
+    height: auto;
+    margin-left: -8px;
+    margin-top: -16px;
+    margin-right: -8px;
+    padding-bottom: 50px;
+    height: 100vh;
+}
+
+.topsection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80px;
+    max-width: 100rem;
+    min-width: 400px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    background-color: black;
+    z-index: 200;
+}
+.top{
+    display: flex;
+    flex-direction:column;
+    height: 100vh;
+    z-index: 1;
+    
+    position: relative;
+}
+.topright{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    transition: 1s;
+    width: 600px;
+    align-items: center;
+}
+.middlesection{
+   height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 150px; 
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 50px;
+    margin-top: -20px;
+    
+}
+.content{
+    line-height: 55px;
+    flex: 1;
+    margin-top: -150px;
+}
+.developername {
+    width: 22ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ffffff;
+    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+    font-size: 45px;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+@keyframes typing {
+from { width: 0 }
+to { width: 22ch }
+}
+
+@keyframes blink {
+50% { border-color: transparent; }
+}
+.dpbox{
+    padding-right: 200px;
+}
+.developer{
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    color: rgb(149, 97, 23);
+}
+
+.photos{
+    display: flex;
+    padding-top: 0px;
+    padding-left: 135px;
+    width: 160px;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 550px;
+}
+.desc{
+    padding-left: 150px;
+    font-size: 20px;
+    position: absolute;
+    top: 550px;
+}
+.desc p{
+    transition: text-decoration 1s;
+    margin-top: -40px;
+     margin-bottom: 0px;
+}
+.desc p:hover{
+    text-decoration: underline;
+}
+.insta img{
+    margin-left: -15px;
+    
+}
+.icons{
+    object-fit: cover;
+    cursor: pointer;
+}
+.icons:hover{
+    transform: rotate(360deg);
+    transition: transform 1.8s ease-in-out;
+}
+/* .icons {
+color: #0ff;
+background: transparent;
+border: 2px solid #0ff;
+border-radius: 8px;
+cursor: pointer;
+text-shadow: 0 0 15px #0ff;
+box-shadow: 0 0 5px #0ff;
+
+
+} */
+/* 
+.icons::before {
+content: "";
+position: absolute;
+top: -8px;
+left: -8px;
+right: -8px;
+bottom: -8px;
+background: rgba(0, 255, 255, 0.2);
+filter: blur(10px);
+opacity: 0;
+border-radius: 12px;
+transition: opacity 0.3s ease-in-out;
+z-index: -1;
+} */
+
+/* .icons:hover {
+box-shadow:
+0 0 50px #0ff,
+0 0 50px #0ff,
+0 0 50px #0ff,
+0 0 50px #0ff;
+color: #000;
+/* background-color: #0ff; */
+} */
+
+/* .icons:hover::before {
+opacity: 1;
+} */
+
+
+.dpbox{
+    display: flex;
+    padding-right: 100px;
+    background-color: blue;
+}
+.boxdp{
+    flex: 1;
+    
+    border-radius: 50px;
+}
+.dp:hover{
+    box-shadow: 0px 0px 45px #0ff;
+}
+.dp{
+    box-shadow: 0px 0px 5px #0ff;
+    width: 350px;
+    height: 450px;
+    border-radius: 50px;
+    object-fit: cover;
+    transition: 0.5s;
+    animation-name: photo;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* @keyframes photo {
+    0%{
+        width: 350px;
+    height: 350px;
+    border-radius: 500px;
+    object-fit: cover;
+    }
+    50%{
+        width: 400px;
+    height: 400px;
+    border-radius: 500px;
+    object-fit: cover;
+    }
+    100%{
+        width: 350px;
+    height: 350px;
+    border-radius: 500px;
+    object-fit: cover;
+    }
+} */
+
+.gitbox,.instabox,.linkedinbox{
+    position: relative;
+}
+.gittxt{
+    position: absolute;
+    left: 10px;
+    top: 60px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+.instatxt{
+    position: absolute;
+    left: -30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+.linkedintxt{
+    position: absolute;
+    left: -10px;
+    top: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s;
+}
+.gitbox:hover .gittxt,.instabox:hover .instatxt,.linkedinbox:hover .linkedintxt{
+    opacity: 1;
+}
+.skills-section{
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.skills-section .skills-heading{
+    text-align: center;
+    font-size: 60px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+.skills-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.skills-range-box{
+    display: flex;
+}
+.skills-range-box p{
+    font-size: 20px;
+}
+.skills-web,.skills-programming{
+    border: 1px solid gray;
+    padding: 50px;
+    margin-right: 20px;
+    border: none;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+}
+.skills-programming{
+    margin-top: -50px;
+    margin-left: 100px;
+}
+.skills-web .skills-title,.skills-programming .skills-title{
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: -10px;
+}
+.about-box{
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+.about-section{
+    display: flex;
+    align-items: center;
+    
+    justify-content: center;
+    
+}
+.about-section .description .downloads .box-1{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+}
+.about-section .description .downloads .box-1 button{
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(195, 195, 215);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+.about-section .description .downloads .box-1 p{
+    margin-right: 30px;
+}
+
+.about-heading{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    
+}
+
+.about-pic{
+    height: 580px;
+    width: 350px;
+    object-fit: cover;
+    /* box-shadow:  0px 0px 25px rgba(255, 255, 255, 0.8); */
+    box-shadow: 0px 0px 25px #0ff;
+    transition: 1s;
+}
+.about-pic:hover{
+    width: 450px;
+    height: 680px;
+}
+.description .text-2{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.description .text-1{
+    text-align: left;
+    font-size: 39px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+.description .text-1,.description .text-2 {
+    width: 15ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid #ffffff;
+    animation: typing 2s steps(15), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+from { width: 0 }
+to { width: 15ch }
+}
+
+@keyframes blink {
+50% { border-color: transparent; }
+}
+.description{
+    padding: 20px;
+    line-height: 33px;
+    margin-left: 30px;
+}
+.description .text-3{
+    width: 400px;
+    font-size: 25px;
+    text-align: left;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+        .fancy-button {
+padding: 10px 20px;
+font-size: 16px;
+color: white;
+background: linear-gradient(to right, #ff416c, #ff4b2b);
+background-size: 200% auto;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+transition: 0.4s ease-in-out;
+background-position: left center;
+box-shadow: 0px 0px 15px #0ff;
+}
+
+.fancy-button:hover {
+background-position: right center;
+}
+
+.contact-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.contact-section .contact-heading{
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.contact-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    box-shadow: 0px 0px 5px #0ff;
+    width: 720px;
+    border-radius: 20px;
+}
+.contact-box:hover{
+    box-shadow: 0px 0px 35px #0ff;
+}
+.contact-box .left-box{
+    border-right: 1px solid white;
+    width: 300px;
+    padding: 10px;
+    text-align: center; 
+}
+.contact-box .left-box .dp{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.contact-box .left-box .thanksnote{
+    font-size: 20px;
+}
+.contact-box .right-box{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    padding: 10px;
+}
+.contact-box .right-box .name-input ,.right-box .mail-input,
+.right-box .number-input,
+.right-box .textarea-input,
+.right-box button
+{
+    margin-left: 15px;
+    padding: 5px;
+    margin-bottom: 5px;
+    outline: none;
+    box-shadow: 0px 0px 2px #0ff;
+    border-radius: 5px;
+    background: transparent;
+    color: aliceblue;
+}
+.contact-box .right-box p{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.contact-box .right-box div{
+    text-align: center;
+}
+.contact-box .right-box button{
+    background-color: blue;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+.certification-section{
+   height: 130vh;
+   display: flex;
+   flex-direction: column;
+   
+}
+.certifications-section-box{
+    display: flex;
+}
+.certifications-section-box .left{
+    padding-left: 110px;
+    width: 300px;
+    padding-right: 40px;
+}
+.certifications-section-box .left .heading{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+}
+.certifications-section-box .left .my-data{
+    font-size: 18px;
+}
+.certifications-section-box .left button{
+    background-color: red;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.certifications-section-box .right{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-right: 50px;
+}
+.certifications-section-box .right .certificate{
+    text-align: center;
+}
+.certifications-section-box .right .certificate img{
+    width: 300px;
+    height: 250px;
+    object-fit: contain;
+}
+.thanks-note{
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+}
