@@ -9,6 +9,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 .homesection{
     color: rgb(255, 255, 255);
