@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .typing-game-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .typing-game-container .sample-text{
+            font-size: 25px;
+            margin-top: -5px;
+        }
+        .typing-game-container .typing-heading{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .typing-game-container .style-input-text{
+            font-size: 18px;
+            outline: none;
+            border-color: gray;
+            border-width: 3px;
+            border-style: dashed;
+            margin-top: -5px;
+        }
+        .typing-game-container button{
+            margin-top: 15px;
+            width: 90px;
+            height: 35px;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+        }
+        .typing-game-container .result-section p{
+            font-size: 19px;
+        }
+    </style>
+</head>
+<body>
+    <div class="typing-game-container">
+        <p class="typing-heading">Typing Game</p>
+        <p class="js-sample-text sample-text"></p>
+        <textarea  class="input_text style-input-text" rows="12" cols="40"></textarea>
+        <button class="js-check-btn">check</button>
+        <div class="result-section js-result">
+            
+        </div>
+
+    </div>
+    <script>
+        let random_strings=['vamsi hii broo what are you doing',
+            'this is vamsi from Darsiparru!, Can I get Your contact details as soon as possible',
+            'This is the intel Core i7 processor bases on series U, iRISxe Graphics RTX 3050',
+            'What are you doing man'
+        ];
+        let index=Math.floor(Math.random()*random_strings.length);
+        let sample_text=random_strings[index];
+        console.log(sample_text);
+        document.querySelector('.js-sample-text').innerHTML=`sample text: ${sample_text}`;
+        let initialtime=null;
+        let hrs=0;
+        let mins=0;
+        let secs=0;
+        let backspace_count=0;
+        document.querySelector('.input_text').addEventListener('input',()=>{
+            if(initialtime===null){
+                initialtime=new Date().getTime();
+                console.log(initialtime);
+                let time=new Date();
+                console.log(time.getHours());
+                hrs=time.getHours();
+                mins=time.getMinutes();
+                secs=time.getSeconds();
+                total_time=JSON.stringify(hrs)+JSON.stringify(mins)+JSON.stringify(secs);
+                console.log(total_time);
+            }
+
+
+        });
+        document.querySelector('.input_text').addEventListener('keydown',(event)=>{
+            if(event.key==='Backspace'){
+                backspace_count+=1;
+            }
+        });
+        document.querySelector('.js-check-btn').addEventListener('click',()=>{
+            check();
+        });
+        function check(){
+            let input_text=document.querySelector('.input_text').value;
+            if(input_text===""){
+                 document.querySelector('.js-result').innerHTML=`
+                <p>Please type the sampletext in the text area provided</p>
+            `;
+            }
+            else{
+                console.log(input_text);
+                let lst=[]
+                lst=input_text.split(" ");
+                console.log(lst);
+                let end_time=new Date();
+                console.log(end_time.getHours());
+                let end_hrs=end_time.getHours();
+                let end_mins=end_time.getMinutes();
+                let end_secs=end_time.getSeconds();
+                let end_total_time=JSON.stringify(end_hrs)+JSON.stringify(end_mins)+JSON.stringify(end_secs);
+                console.log(end_total_time);
+                let wpm_value=wpm(input_text,end_hrs,end_mins,end_secs);
+                let accuracy_value=accuracy(input_text);
+                let diff_time=((end_hrs-hrs)*60*60)+((end_mins-mins)*60)+(end_secs-secs);
+                diff_time=diff_time;
+                document.querySelector('.js-result').innerHTML=`
+                <p>Time: ${diff_time/60} per min , ${diff_time} per sec</p>
+
+                <P>WPM: ${wpm_value}</P>
+                <p>Accuracy: ${accuracy_value}</p>
+                `;
+            }
+            
+        }
+        function wpm(input_text,end_hrs,end_mins,end_secs){
+            let len_str=input_text.length;
+            // console.log(len_str);
+            let diff_time=((end_hrs-hrs)*60*60)+((end_mins-mins)*60)+(end_secs-secs);
+            let wpm_value= (len_str/5)/(diff_time/60);
+            console.log(wpm_value);
+            return wpm_value;
+
+        }
+        function accuracy(input_text){
+            let count=0;
+            let total_no_letters_typed=sample_text.length;
+            for(let i=0;i<sample_text.length;i++){
+                if(sample_text[i]===input_text[i]){
+                    count+=1;
+                }
+            }
+            count=count-backspace_count;
+            let accuracy_percent=(count/total_no_letters_typed)*100;
+            console.log(accuracy_percent);
+            return accuracy_percent;
+        }
+    </script>
+</body>
+</html>
