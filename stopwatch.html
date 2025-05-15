@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .heading{
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: -5px;
+        }
+        .timerbox{
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .buttons-section button{
+            background-color: gray;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p class="heading">STOP WATCH</p>
+    <div class="timerbox">
+        <p class="js-stopwatch">00hrs: 00mins: 00secs</p>
+    </div>
+    <div class="buttons-section">
+        <button onclick="starttimer()">start</button>
+        <button onclick="stoptimer()">stop</button>
+        <button onclick="resettimer()">reset</button>
+    </div>
+    <script>
+        let count=0;
+        let stopwatchinterval;
+        let hrs=0;
+        let mins=0;
+        let secs=0;
+        function starttimer(){
+            stopwatchinterval=setInterval( ()=>{
+                count+=1;
+                // console.log(count);
+                hrs=String(Math.floor(count/3600)).padStart(2,0);
+                mins=String(Math.floor((count%3600)/60)).padStart(2,'0');
+                secs=String(Math.floor((count%60))).padStart(2,'0');
+                console.log(hrs);
+                console.log(mins);
+                console.log(secs);
+                document.querySelector('.js-stopwatch').innerHTML=`${hrs}hrs : ${mins}mins : ${secs}secs`;
+            } ,1000 );
+            
+        }
+        function stoptimer(){
+            clearInterval(stopwatchinterval);
+            stopwatchinterval=null;
+        }
+        function resettimer(){
+            count=0;
+            clearInterval(stopwatchinterval);
+            document.querySelector('.js-stopwatch').innerHTML=`00hrs : 00mins : 00secs`;
+        }
+    </script>
+</body>
+</html>
