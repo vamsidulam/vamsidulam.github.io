@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('../insta\ website\ pics/AA-7.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .header-section{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: bold;
+            color: white;
+        }
+        .header-section .slider-title{
+            width: 500px;
+            font-size: 40px;
+        }
+        .header-section .navbar-section{
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            color: white;
+            padding-left: 120px;
+            
+        }
+        .content-section .img-description-section p{
+            font-size: 25px;
+            font-weight: bold;        
+        }
+        .content-section .img-description-section button{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+        }
+        .content-section .images-section{
+            flex: 1;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin-left: 50px;
+        }
+        .content-section .images-section div{
+            padding-left: 30px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .photos{
+            border-radius: 30px;
+            width: 200px;
+            height: 400px;
+            object-fit: cover;
+        }
+        .photos:hover{
+            box-shadow: 0px 0px 25px #0ff;
+        }
+        .photos:active{
+            box-shadow: 0px 0px 25px rgb(15, 43, 43);
+        }
+         .images-section::-webkit-scrollbar {
+            display: none;
+        }
+        @media (max-width: 360px){
+            .content-section{
+                display: flex;
+                flex-direction: column;
+                margin-top: 80px;
+                height: 85vh;
+            }
+            .content-section .images-section{
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+                margin-left: -100px;
+                width: 355px;
+                
+            }
+            .header-section .navbar-section{
+                
+                display: none;
+                
+            }
+             .header-section .slider-title{
+                text-align: center;
+                font-size: 25px;
+            }
+            
+            body div{
+                width: 205px;
+            }
+            .content-section .img-description-section p{
+                font-size: 15px;     
+            }
+             .photos{
+                border-radius: 20px;
+                width: 150px;
+                height: 280px;
+            }
+            .content-section .img-description-section button{
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-radius: 5px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="header-section">
+            <div class="slider-title">Vamsi Dulam</div>
+            <div class="navbar-section">
+                <p>HOME</p>
+                <p>INFO</p>
+                <p>CONTACT</p>
+            </div>
+        </div>
+        <div class="content-section">
+            <div class="img-description-section">
+                <p class="js-wallpapertext">WALLPAPER-1</p>
+                <a target="_blank" href="seemorepage.html">
+                    <button class="see-more-btn">See more</button>
+                </a>
+                
+            </div>
+            <div class="images-section">
+                <div>
+                    <img class="photos" src="../insta website pics/AA-1.jpg">
+                </div>
+                <div>
+                    <img class="photos" src="../insta website pics/AA-2.jpg">
+                </div>
+                <div>
+                    <img class="photos" src="../insta website pics/AA-3.jpg">
+                </div>
+                <div>
+                    <img class="photos" src="../insta website pics/AA-4.jpg">
+                </div>
+                <div>
+                    <img class="photos" src="../insta website pics/AA-5.jpg">
+                </div>
+                <div>
+                    <img class="photos" src="../insta website pics/AA-6.jpg">
+                </div>
+                <div>
+                    <img class="photos" src="../insta website pics/AA-7.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="imageslider.js"></script>
+</body>
+</html>
