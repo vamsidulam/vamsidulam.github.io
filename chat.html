@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .conversation{
+            width: 300px;
+            height: 500px;
+            box-shadow: 0px 0px 5px black;
+            position: relative;
+        }
+        .result-section{
+            padding: 8px;
+            line-height: 23px;
+            height: 430px;
+            overflow-y: auto;
+        }
+        .bottom-section{
+            position: absolute;
+            bottom: 0px;
+            padding: 20px;
+        }
+        .bottom-section input{
+            outline: none;
+            border: none;
+            box-shadow: 0px 0px 5px rgb(155, 139, 139);
+            padding: 10px;
+            border-radius: 9px;
+        }
+        .bottom-section button{
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 6px;
+            margin-left: 7px;
+        }
+        .result-section .msg,.result-section .reply{
+            max-width: 80%;
+            word-wrap: break-word;
+            background-color: beige;
+            padding: 8px;
+            border-radius: 10px;
+            
+        }
+        .result-section .msg{
+            text-align: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            float: right;
+            clear: both;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .result-section .reply{
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            float: left;
+            clear: both;
+            text-align: left;
+        }
+        .result-section::-webkit-scrollbar {
+    width: 6px;
+}
+
+.result-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.result-section::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.result-section::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+    </style>
+</head>
+<body>
+    <div class="conversation">
+        <div class="js-result result-section">
+        </div>
+        <div class="bottom-section">
+            <input class="js-input" type="text" placeholder="Enter text">
+            <button class="send-btn">Send</button>
+        </div>
+        
+    </div>
+    <script>
+        const conversation=
+            {
+                "hi":"hello",
+                "what's up bro":"ntg fine bro",
+                "how are you bro":"i am fine bro",
+                "bye bro":"byee",
+                "em chestunnav bro": "em ledhu bro, relax avutunna!",
+                "em chestunav":"nek endhuku ra",
+                "bagunnava": "bagunna bro, nuvvu?",
+                "ni peru enti": "naa peru chatbot ra bro 😄",
+                "tinnava": "ledh pedthava enti",
+                "ekkadiki velthunnav": "ekkadiki kadu bro, ikkade unta!",
+                "class ki vellava": "naaku classs undavu bro 😄",
+                "lunch ayyinda": "ayyindi bro, nee da?",
+                "neeku girlfriend undha": "virtual lo chala mandi unnaru bro 😂",
+                "exam ela ayyindi": "chatbot ki exams undavu bro, kani nuvvu pass avuthav!",
+                "naku bore kotthundi": "oka movie chudandi bro, leka natho matladu!",
+                "phone number ivvu": "nenu AI bro, number ledhu 😅",
+                "whatsapp undha": "AI ki WhatsApp ledhu bro, kani nenu ikkade unta 😎",
+                "nee favourite color enti": "blue ante nachhuthadi bro!",
+                "nee favourite movie enti": "sankranthi special - Ala Vaikunthapurramuloo!",
+                "nee best friend evaru": "nuvve bro! 😄",
+                "padukuntunnava": "inka ledu bro, nenu alert ga unta!",
+                "i love u":"luv to raa bangaram",
+                "luv u":"hate u",
+                "mg":"nuve na mg",
+                "erripuka":"dengaii",
+                "ep":"vara gadu erripuku",
+                "goodha puka":"Yes Madhav gadu goodha puk gadu",
+                "vishnu":"veedu kojja lanjodukuu gadu",
+                "madhav":"veedu lawda gadu",
+                "vara":"veedu konda gadu",
+                "puk nak":"chandu gadidhi chala baguntadhi",
+                "uppalbalu":"sai gade ga idhi, vadidhi chala baguntadhi kani madhav gadikey istadu 😄",
+                "dengai":"vangoo marii",
+                "puk nak":"agu vastuna",
+                "kojja":"kojja mundakana",
+                "puka":"erripuka",
+                "bye":"bye",
+                "kasi":"topper",
+                "vamsi":"kasi midha topper",
+                "pallavi":"palla setuu",
+                "fallavi":"ring roaduu"
+            };
+        const msgs=[
+
+        ];
+        document.querySelector('.js-input').addEventListener('keydown',(event)=>{
+            if(event.key==='Enter'){
+                chat();
+            }
+        });
+        document.querySelector('.send-btn').addEventListener(('click'),() => {
+            chat();
+        });
+        function chat(){
+            let input_text=document.querySelector('.js-input').value;
+            console.log(input_text);
+            let reply_msg='';
+            reply_msg=conversation[input_text];
+            console.log(reply_msg);
+            if(reply_msg !== undefined &&reply_msg!=''){
+                msgs.push({
+                    msg:input_text,
+                    reply:reply_msg
+                });
+            }
+            reply_msg='';
+            // console.log(replies);
+            console.log(msgs);
+            document.querySelector('.js-input').value='';
+            let htmlcode='';
+            msgs.forEach((msg)=>{
+                let msg_p=msg.msg;
+                let reply_p=msg.reply;
+                htmlcode+=`
+                <p class="msg">${msg_p}</p>
+                <p class="reply">${reply_p}</p>
+                `;
+            });
+            document.querySelector('.js-result').innerHTML=htmlcode;
+            document.querySelector('.js-result').scrollTop=document.querySelector('.js-result').scrollHeight;
+        }
+    </script>
+</body>
+</html>
