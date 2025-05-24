@@ -162,6 +162,7 @@
         });
         function chat(){
             let input_text=document.querySelector('.js-input').value;
+            input_text=input_text.toLowerCase();
             console.log(input_text);
             let reply_msg='';
             reply_msg=conversation[input_text];
